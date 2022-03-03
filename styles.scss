@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+$light-cyan: hsl(193, 38%, 86%);
+$neon-green: hsl(150, 100%, 66%);
+$grayish-blue: hsl(217, 19%, 38%);
+$dark-grayish-blue: hsl(217, 19%, 24%);
+$dark-blue: hsl(218, 23%, 16%);
+
+$font-size: 28px;
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    height: 100vh;
+    .container {
+        width: 1440px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .app {
+            width: 542px;
+            background-color: $dark-grayish-blue;
+            position: relative;
+            border-radius: 14px;
+
+            h1 {
+                margin-top: 52px;
+                margin-bottom: 26px;
+                padding: 0;
+                color: $neon-green;
+                font-size: 16px;
+                letter-spacing: 5px;
+            }
+
+            p {
+                font-size: $font-size;
+                color: $light-cyan;
+                font-weight: 800;
+                width: 468px;
+                margin: 0 auto;
+            }
+
+            .breakline {
+                margin-top: 32px;
+                margin-bottom: 54px;
+            }
+
+            .breakline.mobile {
+                display: none;
+            }
+
+            .roll-advice {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                display: flex;
+                width: 66px;
+                height: 66px;
+                border-radius: 50%;
+                background-color: $neon-green;
+                justify-content: center;
+                align-items: center;
+                transform: translate(-50%, 50%);
+                cursor: pointer;
+
+                svg {
+                    border-radius: 4px;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 40px -5px $neon-green;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 376px) {
+        .container {
+            .app {
+                width: 344px;
+                height: 314px;
+
+                h1 {
+                    margin-top: 38px;
+                    margin-bottom: 15px;
+                }
+                p {
+                    width: 342px;
+                    padding: 0 12px;
+                }
+                .breakline {
+                    display: none;
+                }
+
+                .breakline.mobile {
+                    margin: 24px 0 54px;
+
+                    display: block;
+                }
+            }
+        }
+    }
+}
